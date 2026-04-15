@@ -144,43 +144,58 @@ header {
 ============================================================ */
 #hero {
   position: relative;
-  /* スマホ: 画像の縦横比に合わせて高さを確保 */
-  min-height: 100svh;
   display: flex;
-  /* 常に左下にコンテンツを配置 */
   align-items: flex-end;
   justify-content: flex-start;
   padding-top: 58px;
   overflow: hidden;
+  /* 画像の縦横比(1200/1310≒91.6%)に合わせて高さを確保 */
+  min-height: calc(100vw * 1200 / 1310 + 58px);
+}
+/* PC以上では画面の高さいっぱいに */
+@media (min-width: 900px) {
+  #hero {
+    min-height: 100svh;
+  }
 }
 .hero-img {
   position: absolute;
   inset: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  /* スマホ: 画像の上部（顔）が確実に見えるよう top 寄せ */
-  object-position: center 15%;
+  /* 画像の顔（上半分）が見えるよう上寄せ */
+  object-position: center top;
 }
-/* タブレット以上では画像全体が見えるよう中央に */
-@media (min-width: 768px) {
+/* スマホでは画像を自然なサイズで表示して見切れを防ぐ */
+@media (max-width: 767px) {
   .hero-img {
-    object-position: center center;
+    position: absolute;
+    top: 58px; /* header分 */
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+    object-position: unset;
+  }
+  #hero {
+    /* 画像の自然な高さ + header + テキスト余白 */
+    min-height: calc(100vw * 1200 / 1310 + 58px + 220px);
   }
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* 左下テキストエリアを暗くしつつ、上部（顔）はクリアに保つ */
   background:
     linear-gradient(
       to top,
-      rgba(10,5,8,0.72) 0%,
-      rgba(10,5,8,0.38) 35%,
-      rgba(0,0,0,0) 60%
+      rgba(10,5,8,0.78) 0%,
+      rgba(10,5,8,0.35) 30%,
+      rgba(0,0,0,0) 55%
     ),
     linear-gradient(
       to right,
-      rgba(0,0,0,0.22) 0%,
+      rgba(0,0,0,0.20) 0%,
       rgba(0,0,0,0) 55%
     );
 }
@@ -188,10 +203,8 @@ header {
   position: relative;
   z-index: 2;
   width: 100%;
-  /* 常に左寄せ。max-width で右への広がりを制限 */
   max-width: 560px;
   padding: clamp(32px,6vw,64px) var(--px) clamp(36px,5vw,60px);
-  /* margin: 0 auto を使わず左端から配置 */
   margin: 0;
 }
 .hero-label {
