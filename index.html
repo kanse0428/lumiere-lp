@@ -179,15 +179,15 @@
   .btn-line {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     background: linear-gradient(135deg, #f5c6cf 0%, #e8929f 30%, #c8637a 70%, #b5566c 100%);
     color: #fff;
     text-decoration: none;
-    padding: 16px 44px;
+    padding: 20px 56px;
     border-radius: 50px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     box-shadow: 0 6px 30px rgba(200, 99, 122, 0.45), 0 2px 8px rgba(200, 99, 122, 0.2), inset 0 1px 0 rgba(255,255,255,0.25);
     transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     position: relative;
@@ -212,20 +212,17 @@
 
   /* LINE SVGロゴ */
   .line-icon {
-    width: 30px;
-    height: 30px;
-    background: #06C755;
-    border-radius: 8px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    overflow: hidden;
   }
   .line-icon svg {
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.15));
   }
 
   /* LINE CTA extra info */
@@ -828,10 +825,16 @@
     inset: 0;
     pointer-events: none;
     overflow: hidden;
-    z-index: 3;
+    z-index: 10;
   }
-  .section-hero picture,
-  .section-hero img {
+  .section-hero picture {
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  .section-hero picture img {
+    display: block;
+    width: 100%;
     position: relative;
     z-index: 1;
   }
@@ -912,7 +915,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    z-index: 3;
+    z-index: 10;
     overflow: hidden;
   }
   .heart {
@@ -1091,13 +1094,8 @@
 <div class="line-cta-wrap fade-in">
   <a href="https://lin.ee/xxxxx" class="btn-line">
     <span class="line-icon">
-      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
-        <rect width="48" height="48" rx="12" fill="white" opacity="0.25"/>
-        <path d="M40 22.2C40 14.9 32.8 9 24 9S8 14.9 8 22.2c0 6.5 5.8 12 13.6 13 .5.1 1.2.4 1.4.9.2.4.1 1 .1 1.5l-.3 1.6c-.1.5-.4 1.8 1.5 1 1.9-.8 10.2-6 13.9-10.3C39 27.4 40 24.9 40 22.2z" fill="white"/>
-        <path d="M20.3 25.4h-3.2v-6.6c0-.4-.3-.7-.7-.7s-.7.3-.7.7v7.3c0 .4.3.7.7.7h3.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M22.2 18.1c-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7s.7-.3.7-.7v-7.3c0-.4-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M31.5 18.1c-.4 0-.7.3-.7.7v4.3l-3.4-4.7c-.1-.2-.3-.3-.6-.3-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7s.7-.3.7-.7v-4.3l3.4 4.7c.1.2.3.3.6.3.4 0 .7-.3.7-.7v-7.3c0-.4-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M15.6 23h2.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-2.9v-1.8h2.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-3.6c-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7h3.6c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-2.9V23z" fill="rgba(200,99,122,0.9)"/>
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path fill="white" d="M24 6C13.5 6 5 13.2 5 22c0 7.8 6.3 14.4 15 16.3.6.1 1.4.4 1.6.9.2.5.1 1.2 0 1.7l-.3 1.5c-.1.6-.4 2.2 1.8 1.2 2.2-.9 12-7 16.3-12C42.1 28 43 25.1 43 22 43 13.2 34.5 6 24 6z"/>
       </svg>
     </span>
     LINEで予約する
@@ -1152,13 +1150,8 @@
   <p class="line-cta-title">LINEから簡単予約・デザイン相談も無料</p>
   <a href="https://lin.ee/xxxxx" class="btn-line">
     <span class="line-icon">
-      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
-        <rect width="48" height="48" rx="12" fill="white" opacity="0.25"/>
-        <path d="M40 22.2C40 14.9 32.8 9 24 9S8 14.9 8 22.2c0 6.5 5.8 12 13.6 13 .5.1 1.2.4 1.4.9.2.4.1 1 .1 1.5l-.3 1.6c-.1.5-.4 1.8 1.5 1 1.9-.8 10.2-6 13.9-10.3C39 27.4 40 24.9 40 22.2z" fill="white"/>
-        <path d="M20.3 25.4h-3.2v-6.6c0-.4-.3-.7-.7-.7s-.7.3-.7.7v7.3c0 .4.3.7.7.7h3.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M22.2 18.1c-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7s.7-.3.7-.7v-7.3c0-.4-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M31.5 18.1c-.4 0-.7.3-.7.7v4.3l-3.4-4.7c-.1-.2-.3-.3-.6-.3-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7s.7-.3.7-.7v-4.3l3.4 4.7c.1.2.3.3.6.3.4 0 .7-.3.7-.7v-7.3c0-.4-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M15.6 23h2.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-2.9v-1.8h2.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-3.6c-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7h3.6c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-2.9V23z" fill="rgba(200,99,122,0.9)"/>
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path fill="white" d="M24 6C13.5 6 5 13.2 5 22c0 7.8 6.3 14.4 15 16.3.6.1 1.4.4 1.6.9.2.5.1 1.2 0 1.7l-.3 1.5c-.1.6-.4 2.2 1.8 1.2 2.2-.9 12-7 16.3-12C42.1 28 43 25.1 43 22 43 13.2 34.5 6 24 6z"/>
       </svg>
     </span>
     LINEで予約する →
@@ -1197,13 +1190,8 @@
 <div class="line-cta-wrap fade-in" style="background:var(--pink-pale);">
   <a href="https://lin.ee/xxxxx" class="btn-line">
     <span class="line-icon">
-      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
-        <rect width="48" height="48" rx="12" fill="white" opacity="0.25"/>
-        <path d="M40 22.2C40 14.9 32.8 9 24 9S8 14.9 8 22.2c0 6.5 5.8 12 13.6 13 .5.1 1.2.4 1.4.9.2.4.1 1 .1 1.5l-.3 1.6c-.1.5-.4 1.8 1.5 1 1.9-.8 10.2-6 13.9-10.3C39 27.4 40 24.9 40 22.2z" fill="white"/>
-        <path d="M20.3 25.4h-3.2v-6.6c0-.4-.3-.7-.7-.7s-.7.3-.7.7v7.3c0 .4.3.7.7.7h3.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M22.2 18.1c-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7s.7-.3.7-.7v-7.3c0-.4-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M31.5 18.1c-.4 0-.7.3-.7.7v4.3l-3.4-4.7c-.1-.2-.3-.3-.6-.3-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7s.7-.3.7-.7v-4.3l3.4 4.7c.1.2.3.3.6.3.4 0 .7-.3.7-.7v-7.3c0-.4-.3-.7-.7-.7z" fill="rgba(200,99,122,0.9)"/>
-        <path d="M15.6 23h2.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-2.9v-1.8h2.9c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-3.6c-.4 0-.7.3-.7.7v7.3c0 .4.3.7.7.7h3.6c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-2.9V23z" fill="rgba(200,99,122,0.9)"/>
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path fill="white" d="M24 6C13.5 6 5 13.2 5 22c0 7.8 6.3 14.4 15 16.3.6.1 1.4.4 1.6.9.2.5.1 1.2 0 1.7l-.3 1.5c-.1.6-.4 2.2 1.8 1.2 2.2-.9 12-7 16.3-12C42.1 28 43 25.1 43 22 43 13.2 34.5 6 24 6z"/>
       </svg>
     </span>
     気になるデザインを相談する
